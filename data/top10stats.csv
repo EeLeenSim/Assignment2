@@ -1,11 +1,31 @@
-﻿Country,Groceries Index,Restaurant Price Index,Local Purchasing Power Index
-Bermuda,148.66,159.17,81.07
-Switzerland,128.13,122.09,118.44
-Norway,97.31,105.49,83.11
-Iceland,90.22,99.42,77.06
-Israel,76.72,95.31,75.58
-Denmark,68.6,98.75,99.45
-Singapore,77.08,61.17,91.34
-Hong Kong,84.72,58.58,65.74
-Luxembourg,74.75,88.79,98.84
-Australia,77.44,72.95,104.63
+﻿Country,index,yield
+Bermuda,Groceries Index,148.66
+Bermuda,Restaurant Price Index,159.17
+Bermuda,Local Purchasing Power Index,81.07
+Switzerland,Groceries Index,128.13
+Switzerland,Restaurant Price Index,122.09
+Switzerland,Local Purchasing Power Index,118.44
+Norway,Groceries Index,97.31
+Norway,Restaurant Price Index,105.49
+Norway,Local Purchasing Power Index,83.11
+Iceland,Groceries Index,90.22
+Iceland,Restaurant Price Index,99.42
+Iceland,Local Purchasing Power Index,77.06
+Israel,Groceries Index,76.72
+Israel,Restaurant Price Index,95.31
+Israel,Local Purchasing Power Index,75.58
+Denmark,Groceries Index,68.6
+Denmark,Restaurant Price Index,98.75
+Denmark,Local Purchasing Power Index,99.45
+Singapore,Groceries Index,77.08
+Singapore,Restaurant Price Index,61.17
+Singapore,Local Purchasing Power Index,91.34
+Hong Kong,Groceries Index,84.72
+Hong Kong,Restaurant Price Index,58.58
+Hong Kong,Local Purchasing Power Index,65.74
+Luxembourg,Groceries Index,74.75
+Luxembourg,Restaurant Price Index,88.79
+Luxembourg,Local Purchasing Power Index,98.84
+Australia,Groceries Index,77.44
+Australia,Restaurant Price Index,72.95
+Australia,Local Purchasing Power Index,104.63
