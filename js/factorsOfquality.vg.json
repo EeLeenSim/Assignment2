@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with labels.",
+    "data": {
+      "values": [
+        {"Factor": "Stability", "Percentage": 15},
+        {"Factor": "Rights", "Percentage": 20},
+        {"Factor": "Health", "Percentage": 15},
+        {"Factor": "Safety", "Percentage": 10},
+        {"Factor": "Climate", "Percentage": 15},
+        {"Factor": "Costs", "Percentage": 15},
+        {"Factor": "Popularity", "Percentage": 10}
+      ]
+    },
+    "title":"Factors contribute to Quality of Life",
+    "encoding": {
+      "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
+      "color": {"field": "Factor", "type": "nominal", "legend": null },"tooltip": [
+        {"field": "Factor", "type": "nominal"},
+        {"field": "Percentage", "type": "quantitative"}
+      ]}
+    ,
+    "layer": [{
+      "mark": {"type": "arc", "outerRadius": 70}
+    }, {
+      "mark": {"type": "text", "radius": 89},
+      "encoding": {
+        "text": {"field": "Factor", "type": "nominal"}
+      }
+    }]
+  }
+  

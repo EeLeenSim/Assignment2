@@ -1,0 +1,10 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/Cost_of_Living_Index_2022%26qualityLife.csv"},
+    "title": "Does quality of life comes with a price?",
+    "mark": {"type": "circle", "tooltip": {"content": "data"}},
+    "encoding": {
+      "x": {"field": "Cost of Living Index", "type": "quantitative"},
+      "y": {"field": "TotalQuality of life(100%)", "type": "quantitative"}
+    }
+  }

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/top10stats.csv"},
+    "title": "Top 10 Country with Highest Living Index", 
+    "width": 500, "height": 250,
+    "resolve": {"scale": {"color": "independent"}},
+    "layer": [
+    {"mark": "bar",
+    "encoding": {
+      "x": {"aggregate": "sum", "field": "yield","type": "quantitative", "stack": "zero"},
+      "y": {"field": "Country", "sort":"-x", "type": "nominal"},
+      "color": {"field": "Index","type": "nominal"}}
+      },
+      {"mark": {"type": "text", "dx": -15, "dy": 3},
+        "encoding": {
+          "x": {"aggregate": "sum", "field": "yield", "type": "quantitative", "stack": "zero","title":null},
+          "y": {"field": "Country", "type": "nominal","sort":"-x"},
+          "color": {"field": "Index", "type": "nominal", "scale": {"range": ["white"]}, "legend": null},
+          "text": {"aggregate": "sum", "field": "yield", "type": "quantitative", "format": ".1f"}}
+      }
+    ]
+  }
