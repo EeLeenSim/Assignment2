@@ -1,31 +1,41 @@
 ﻿Country,Index,yield
+Pakistan,Cost of Living Index,19.92
 Pakistan,Groceries Index,17.81
 Pakistan,Restaurant Price Index,15.54
 Pakistan,Local Purchasing Power Index,26.63
+Afghanistan,Cost of Living Index,20.37
 Afghanistan,Groceries Index,14.92
 Afghanistan,Restaurant Price Index,12.41
 Afghanistan,Local Purchasing Power Index,23.04
+India,Cost of Living Index,24.43
 India,Groceries Index,26.43
 India,Restaurant Price Index,17.56
 India,Local Purchasing Power Index,49.72
+Colombia,Cost of Living Index,26.72
 Colombia,Groceries Index,23.47
 Colombia,Restaurant Price Index,19.44
 Colombia,Local Purchasing Power Index,28.85
+Algeria,Cost of Living Index,26.87
 Algeria,Groceries Index,28.82
 Algeria,Restaurant Price Index,14.48
 Algeria,Local Purchasing Power Index,24.63
+Tunisia,Cost of Living Index,27.87
 Tunisia,Groceries Index,27.36
 Tunisia,Restaurant Price Index,15.96
 Tunisia,Local Purchasing Power Index,27.83
+Nepal,Cost of Living Index,28.29
 Nepal,Groceries Index,26.45
 Nepal,Restaurant Price Index,20.41
 Nepal,Local Purchasing Power Index,22.96
+Turkey,Cost of Living Index,28.31
 Turkey,Groceries Index,22.64
 Turkey,Restaurant Price Index,18.4
 Turkey,Local Purchasing Power Index,32.88
+Kazakhstan,Cost of Living Index,28.68
 Kazakhstan,Groceries Index,25.35
 Kazakhstan,Restaurant Price Index,27.24
 Kazakhstan,Local Purchasing Power Index,32.23
+Egypt,Cost of Living Index,29.52
 Egypt,Groceries Index,27.42
 Egypt,Restaurant Price Index,23.42
 Egypt,Local Purchasing Power Index,21.54
