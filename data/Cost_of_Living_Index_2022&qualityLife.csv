@@ -1,118 +1,118 @@
-Rank,Country,Cost of Living Index,TotalQuality of life(100%)
-1,Bermuda,146.04,71
-2,Switzerland,123.35,74
-3,Norway,100.9,69
-4,Iceland,94.86,63
-5,Israel,88.05,65
-6,Denmark,84.12,67
-7,Singapore,83.98,71
-8,Hong Kong,80.71,74
-9,Luxembourg,80.5,71
-10,Australia,77.75,76
-11,Japan,77.03,70
-12,Ireland,76.05,62
-13,Netherlands,75.66,67
-14,New Zealand,74.52,68
-15,France,74.13,68
-16,South Korea,73.22,69
-17,Finland,73.2,68
-18,Belgium,72.61,63
-19,Sweden,71.74,68
-20,Austria,71.04,69
-21,Canada,70.22,69
-22,United States,70.13,67
-23,United Kingdom,69.65,61
-24,Lebanon,69.62,45
-25,Malta,67.84,72
-26,Macao,66.81,73
-27,Italy,66.47,64
-28,Germany,65.58,69
-29,Qatar,62.81,66
-30,Cyprus,59.03,69
-31,United Arab Emirates,58.33,67
-32,Maldives,57.66,57
-33,Greece,56.22,65
-34,Trinidad And Tobago,54.88,51
-35,Bahrain,54.77,59
-36,Slovenia,53.88,66
-37,Spain,53.88,71
-38,Estonia,53.68,63
-39,Uruguay,52.07,67
-40,Suriname,51.78,48
-41,Saudi Arabia,50.41,60
-42,Senegal,50.25,53
-43,Jamaica,49.67,50
-44,Oman,49.42,59
-45,Jordan,49.19,54
-46,Cambodia,49.11,44
-47,Croatia,48.94,65
-48,Kuwait,48.68,57
-49,Latvia,48.45,60
-50,Czech Republic,48.24,66
-51,Portugal,47.94,69
-52,Ethiopia,47.49,42
-53,Ivory Coast,47.03,42
-54,Costa Rica,47.01,58
-55,Zimbabwe,45.68,39
-56,Lithuania,45.65,60
-57,Slovakia,44.68,60
-58,El Salvador,44.37,45
-59,Chile,43.9,63
-60,Guatemala,43.49,46
-61,Thailand,43.21,58
-62,South Africa,42.09,52
-63,China,41.77,57
-64,Dominican Republic,41.77,50
-65,Hungary,40.66,63
-66,Honduras,40.46,46
-67,Nicaragua,39.64,42
-68,Cameroon,39.48,34
-69,Montenegro,38.95,56
-70,Poland,38.95,64
-71,Bulgaria,38.38,62
-72,Vietnam,37.48,52
-73,Iran,37.39,42
-74,Ecuador,37.34,54
-75,Philippines,37.06,47
-76,Malaysia,37.02,58
-77,Serbia,36.21,53
-78,Ghana,36.2,49
-79,Bosnia And Herzegovina,36.12,54
-80,Indonesia,35.85,51
-81,Albania,35.5,55
-82,Mexico,35.35,52
-83,Russia,35.26,49
-84,Romania,35.24,59
-85,Bolivia,34.77,51
-86,Mongolia,34.74,54
-87,Argentina,34.69,56
-88,Iraq,34.47,34
-89,Kenya,33.92,48
-90,Armenia,33.89,54
-91,Morocco,33.83,56
-92,Uganda,33.5,44
-93,Brazil,33.24,50
-94,Bangladesh,33.13,45
-95,Zambia,33.04,44
-96,Tanzania,32.81,49
-97,Peru,32.53,55
-98,Rwanda,31.62,53
-99,North Macedonia,31.38,59
-100,Sri Lanka,31.29,55
-101,Belarus,30.89,44
-102,Ukraine,30.71,50
-103,Nigeria,30.49,32
-104,Moldova,30.35,51
-105,Paraguay,30.2,56
-106,Georgia,30.18,57
-107,Azerbaijan,29.73,46
-108,Egypt,29.52,50
-109,Kazakhstan,28.68,52
-110,Turkey,28.31,54
-111,Nepal,28.29,49
-112,Tunisia,27.87,55
-113,Algeria,26.87,52
-114,Colombia,26.72,48
-115,India,24.43,52
-116,Afghanistan,20.37,35
-117,Pakistan,19.92,47
+Rank,Country,Continent,Cost of Living Index,TotalQuality of life(100%)
+116,Afghanistan,Asia,20.37,35
+81,Albania,Europe,35.5,55
+113,Algeria,Africa,26.87,52
+87,Argentina,South America,34.69,56
+90,Armenia,Asia,33.89,54
+10,Australia,Oceania,77.75,76
+20,Austria,Europe,71.04,69
+107,Azerbaijan,Asia,29.73,46
+35,Bahrain,Asia,54.77,59
+94,Bangladesh,Asia,33.13,45
+101,Belarus,Europe,30.89,44
+18,Belgium,Europe,72.61,63
+1,Bermuda,North America,146.04,71
+85,Bolivia,South America,34.77,51
+79,Bosnia And Herzegovina,Europe,36.12,54
+93,Brazil,South America,33.24,50
+71,Bulgaria,Europe,38.38,62
+46,Cambodia,Asia,49.11,44
+68,Cameroon,Africa,39.48,34
+21,Canada,North America,70.22,69
+59,Chile,South America,43.9,63
+63,China,Asia,41.77,57
+114,Colombia,South America,26.72,48
+54,Costa Rica,North America,47.01,58
+47,Croatia,Europe,48.94,65
+30,Cyprus,Asia,59.03,69
+50,Czech Republic,Europe,48.24,66
+6,Denmark,Europe,84.12,67
+64,Dominican Republic,North America,41.77,50
+74,Ecuador,South America,37.34,54
+108,Egypt,Africa,29.52,50
+58,El Salvador,North America,44.37,45
+38,Estonia,Europe,53.68,63
+52,Ethiopia,Africa,47.49,42
+17,Finland,Europe,73.2,68
+15,France,Europe,74.13,68
+106,Georgia,Asia,30.18,57
+28,Germany,Europe,65.58,69
+78,Ghana,Africa,36.2,49
+33,Greece,Europe,56.22,65
+60,Guatemala,North America,43.49,46
+66,Honduras,North America,40.46,46
+8,Hong Kong,Asia,80.71,74
+65,Hungary,Europe,40.66,63
+4,Iceland,Europe,94.86,63
+115,India,Asia,24.43,52
+80,Indonesia,Asia,35.85,51
+73,Iran,Asia,37.39,42
+88,Iraq,Asia,34.47,34
+12,Ireland,Europe,76.05,62
+5,Israel,Asia,88.05,65
+27,Italy,Europe,66.47,64
+53,Ivory Coast,Africa,47.03,42
+43,Jamaica,Africa,49.67,50
+11,Japan,Asia,77.03,70
+45,Jordan,Asia,49.19,54
+109,Kazakhstan,Asia,28.68,52
+89,Kenya,Africa,33.92,48
+48,Kuwait,Asia,48.68,57
+49,Latvia,Europe,48.45,60
+24,Lebanon,Asia,69.62,45
+56,Lithuania,Europe,45.65,60
+9,Luxembourg,Europe,80.5,71
+26,Macao,Asia,66.81,73
+76,Malaysia,Asia,37.02,58
+32,Maldives,Asia,57.66,57
+25,Malta,Europe,67.84,72
+82,Mexico,North America,35.35,52
+104,Moldova,Europe,30.35,51
+86,Mongolia,Asia,34.74,54
+69,Montenegro,Europe,38.95,56
+91,Morocco,Africa,33.83,56
+111,Nepal,Asia,28.29,49
+13,Netherlands,Europe,75.66,67
+14,New Zealand,Oceania,74.52,68
+67,Nicaragua,North America,39.64,42
+103,Nigeria,Africa,30.49,32
+99,North Macedonia,Europe,31.38,59
+3,Norway,Europe,100.9,69
+44,Oman,Asia,49.42,59
+117,Pakistan,Asia,19.92,47
+105,Paraguay,South America,30.2,56
+97,Peru,South America,32.53,55
+75,Philippines,Asia,37.06,47
+70,Poland,Europe,38.95,64
+51,Portugal,Europe,47.94,69
+29,Qatar,Asia,62.81,66
+84,Romania,Europe,35.24,59
+83,Russia,Europe,35.26,49
+98,Rwanda,Africa,31.62,53
+41,Saudi Arabia,Asia,50.41,60
+42,Senegal,Africa,50.25,53
+77,Serbia,Europe,36.21,53
+7,Singapore,Asia,83.98,71
+57,Slovakia,Europe,44.68,60
+36,Slovenia,Europe,53.88,66
+62,South Africa,Africa,42.09,52
+16,South Korea,Asia,73.22,69
+37,Spain,Europe,53.88,71
+100,Sri Lanka,Asia,31.29,55
+40,Suriname,South America,51.78,48
+19,Sweden,Europe,71.74,68
+2,Switzerland,Europe,123.35,74
+96,Tanzania,Africa,32.81,49
+61,Thailand,Asia,43.21,58
+34,Trinidad And Tobago,South America,54.88,51
+112,Tunisia,Africa,27.87,55
+110,Turkey,Asia,28.31,54
+92,Uganda,Africa,33.5,44
+102,Ukraine,Europe,30.71,50
+31,United Arab Emirates,Asia,58.33,67
+23,United Kingdom,Europe,69.65,61
+22,United States,North America,70.13,67
+39,Uruguay,South America,52.07,67
+72,Vietnam,Asia,37.48,52
+95,Zambia,Africa,33.04,44
+55,Zimbabwe,Africa,45.68,39
