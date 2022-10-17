@@ -1,0 +1,190 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "A radar chart example, showing multiple dimensions in a radial layout.",
+    "width": 380,
+    "height":350,
+    "padding": 80,
+    "autosize": {"type": "none", "contains": "padding"},
+    "title": "Africa",
+     "config": {
+      "title": {
+        "font": "Lucida Sans Unicode",
+        "fontSize":22,
+        "color": "#7e645d",
+        "anchor": "start"
+      }
+    },
+  
+    "signals": [
+      {"name": "radius", "update": "width / 2"}
+    ],
+  
+    "data": [
+      {
+        "name": "table",
+        "values": [
+          {"Factor": "Stability", "value": 41, "Continent": 0},
+          {"Factor": "Rights", "value": 31, "Continent": 0},
+          {"Factor": "Health", "value": 23, "Continent": 0},
+          {"Factor": "Safety", "value": 59, "Continent": 0},
+          {"Factor": "Climate", "value": 68, "Continent": 0},
+          {"Factor": "Costs", "value": 54, "Continent": 0},
+          {"Factor": "Popularity", "value": 39, "Continent": 0}
+        ]
+      },
+      {
+        "name": "Factor",
+        "source": "table",
+        "transform": [
+          {
+            "type": "aggregate",
+            "groupby": ["Factor"]
+          }
+        ]
+      }
+    ],
+  
+    "scales": [
+      {
+        "name": "angular",
+        "type": "point",
+        "range": {"signal": "[-PI, PI]"},
+        "padding": 0.5,
+        "domain": {"data": "table", "field": "Factor"}
+      },
+      {
+        "name": "radial",
+        "type": "linear",
+        "range": {"signal": "[0, radius]"},
+        "zero": true,
+        "nice": false,
+        "domain": {"data": "table", "field": "value"},
+        "domainMin": 0
+      },
+      {
+        "name": "color",
+        "type": "ordinal",
+        "domain": {"data": "table", "field": "Continent"},
+        "range": ["#6d453c"]
+      }
+    ],
+  
+    "encode": {
+      "enter": {
+        "x": {"signal": "radius"},
+        "y": {"signal": "radius"}
+      }
+    },
+  
+    "marks": [
+      {
+        "type": "group",
+        "name": "Continent",
+        "zindex": 1,
+        "from": {
+          "facet": {"data": "table", "name": "facet", "groupby": ["Continent"]}
+        },
+        "marks": [
+          {
+            "type": "line",
+            "name": "Continent-line",
+            "from": {"data": "facet"},
+            "encode": {
+              "enter": {
+                "interpolate": {"value": "linear-closed"},
+                "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.Factor))"},
+                "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.Factor))"},
+                "stroke": {"scale": "color", "field": "Continent"},
+                "strokeWidth": {"value": 1},
+                "fill": {"scale": "color", "field": "Continent"},
+                "fillOpacity": {"value": 0.1}
+              }
+            }
+          },
+          {
+            "type": "text",
+            "name": "value-text",
+            "from": {"data": "Continent-line"},
+            "encode": {
+              "enter": {
+                "x": {"signal": "datum.x"},
+                "y": {"signal": "datum.y"},
+                "text": {"signal": "datum.datum.value"},
+                "align": {"value": "center"},
+                "baseline": {"value": "middle"},
+                "fill": {"value": "black"}
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "rule",
+        "name": "radial-grid",
+        "from": {"data": "Factor"},
+        "zindex": 0,
+        "encode": {
+          "enter": {
+            "x": {"value": 0},
+            "y": {"value": 0},
+            "x2": {"signal": "radius * cos(scale('angular', datum.Factor))"},
+            "y2": {"signal": "radius * sin(scale('angular', datum.Factor))"},
+            "stroke": {"value": "lightgray"},
+            "strokeWidth": {"value": 1}
+          }
+        }
+      },
+      {
+        "type": "text",
+        "name": "key-label",
+        "from": {"data": "Factor"},
+        "zindex": 1,
+        "encode": {
+          "enter": {
+            "x": {"signal": "(radius + 5) * cos(scale('angular', datum.Factor))"},
+            "y": {"signal": "(radius + 5) * sin(scale('angular', datum.Factor))"},
+            "text": {"field": "Factor"},
+            "align": [
+              {
+                "test": "abs(scale('angular', datum.Factor)) > PI / 2",
+                "value": "right"
+              },
+              {
+                "value": "left"
+              }
+            ],
+            "baseline": [
+              {
+                "test": "scale('angular', datum.Factor) > 0", "value": "top"
+              },
+              {
+                "test": "scale('angular', datum.Factor) == 0", "value": "middle"
+              },
+              {
+                "value": "bottom"
+              }
+            ],
+            
+            "fill": {"value": "black"},
+            "fontWeight": {"value": "bold"}
+          }
+        }
+      },
+      {
+        "type": "line",
+        "name": "outer-line",
+        "from": {"data": "radial-grid"},
+        "encode": {
+          "enter": {
+            "interpolate": {"value": "linear-closed"},
+            "x": {"field": "x2"},
+            "y": {"field": "y2"},
+            "stroke": {"value": "lightgray"},
+            "strokeWidth": {"value": 1}
+          }
+        }
+      }
+      
+    ]
+  }
+  

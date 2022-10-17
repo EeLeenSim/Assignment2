@@ -1,10 +1,117 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/Cost_of_Living_Index_2022%26qualityLife.csv"},
-    "title": "Does quality of life comes with a price?",
-    "mark": {"type": "circle", "tooltip": {"content": "data"}},
-    "encoding": {
-      "x": {"field": "Cost of Living Index", "type": "quantitative"},
-      "y": {"field": "TotalQuality of life(100%)", "type": "quantitative"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/Cost_of_Living_Index_2022%26qualityLife.csv"
+  },
+  "width": 500,
+  "height": 400,
+  "params": [
+    {
+      "name": "country_select",
+      "bind":
+      {
+        "input": "select",
+        "options": [
+          null,
+          "Africa","Asia","Europe",
+          "North America","Oceania","South America"
+        ],
+        "labels":  [
+          "All", "Africa","Asia","Europe","North America",
+          "Oceania","South America"
+        ],
+        "name": "Select continent: "
+      }
     }
+  ],
+  "transform": [
+    {"filter": "country_select == null || datum.Continent == country_select"}
+  ],
+
+  "encoding": {
+    "x": {"field": "Cost of Living Index", "type": "quantitative"},
+    "y": {"field": "TotalQuality of life(100%)", "type": "quantitative"}
+  },
+
+  "layer": [
+      {
+        "mark": "circle",
+        "encoding": 
+          {
+          "color": 
+          {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": 
+            {
+              "domain": [
+                "Africa",
+                "Asia",
+                "Europe",
+                "North America",
+                "Oceania",
+                "South America"
+              ],
+              "range": ["#6d4b4b",
+              "#9d25de",
+              "#ef9b20",
+              "#27aeef",
+              "#0e228a",
+              "#87bc45"]
+            }
+          },
+          "tooltip": [
+            { "field": "Country", "type": "nominal" },
+            {
+              "field": "Cost of Living Index",
+              "type": "quantitative",
+              "format": ","
+            },
+            {
+              "field": "TotalQuality of life(100%)",
+              "type": "quantitative",
+              "format": ","
+            }
+          ]
+        }
+      },
+      {
+        "mark": 
+        {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": 
+        {
+          "text": { "field": "Country", "type": "nominal" },
+          "color": { "value": "black" },
+          "opacity": 
+          {
+            "condition": 
+            {
+              "test": "datum['Country'] == 'Lebanon' || datum['Country'] == 'Spain' || datum['Country'] == 'Portugal' || datum['Country'] == 'Bermuda'|| datum['Country'] == 'Israel'|| datum['Country'] == 'Australia'",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            { "field": "Country", "type": "nominal" },
+            { "field": "Cost of Living Index", "type": "quantitative", "format": "," },
+            { "field": "TotalQuality of life(100%)", "type": "quantitative", "format": ".2f" }
+          ]
+        }
+      }
+    ],
+  "config": {
+    "title": {
+      "font": "Lucida Sans Unicode",
+      "fontSize":20,
+      "anchor": "middle"
+    },
+    "background": "#ededed"
   }
+}

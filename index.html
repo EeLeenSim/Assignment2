@@ -1,67 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-    <script src="vega_lite_vis.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+  <script src="vega_lite_vis.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
+  integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
 
-    <style>
-        h1{
-            color:midnightblue;
-            size-adjust: 100;
-        }
-    </style>
-
-
-    <title id="c-align">FIT3179 Visualisation 2</title>
+<title id="c-align">FIT3179 Visualisation 2</title>
 </head>
 
 <body>
-    <h1 id = "c-align">Cost of Living Index 2022</h1>
-</div>
-</div>
 
-<div class="viz-row" id="viz-intro-row">
-  <div id="viz-intro">
-    <p>
-        Cost of Living Index (Excl. Rent) is a relative indicator of consumer goods prices, 
-        including groceries, restaurants, transportation and utilities. 
-        Cost of Living Index does not include accommodation expenses such as rent or mortgage. 
-        If a city has a Cost of Living Index of 120, it means Numbeo has estimated it is 
-        20% more expensive than New York (excluding rent).
-    </p>
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <div class="header">
+        <h1 id="c-align"><strong style="color:#2166ac">QUALITY</strong> OF LIFE BASED ON <strong
+            style="color: #cc663d">LIVING INDEX</strong></h1>
+      </div>
+    </div>
   </div>
-</div>
+  <!-- end pure grid group -->
+  <div class="viz-row">
+    <div id="body">
+      <p>Is <b>life abroad</b> always better? Although it might seems like emigration
+        is going to guarantee you a <b>better life</b>, but it is in fact
+        not obvious that migration has a generall positive effect in migrant's happiness.
+        The experience of deterioration in comparative economic status when
+        ones move to a wealthier country might cause an unfortunate implication
+        for their happiness.
+      </p>
+      <p>
+        <a href="https://www.worlddata.info/quality-of-life.php">source:
+          https://www.worlddata.info/quality-of-life.php</a>
+      </p>
+    </div>
+  </div>
 
+  <div class="chart1_box">
     <div id="choropleth_map"></div>
-    <div id="bar_chart"></div>
-    <div id="scatter_plot"></div>
-    <script>        
-        var vg_1 = "js/map.vg.json";
-        vegaEmbed("#choropleth_map", vg_1).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    
-    <script>
-        var vg_2 = "js/top10.vg.json";
-        vegaEmbed("#bar_chart", vg_2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
-    <script>
-        var vg_2 = "js/qualityVSindex.vg.json";
-        vegaEmbed("#scatter_plot", vg_2).then(function (result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-    </script>
+  </div>
+
+  <div class="grid-container2">
+    <div class="item2">
+      <div id="donut_chart"></div>
+    </div>
+    <div class="item4">
+      <p id="body">
+      <h2>How is Quality of Life Measured?</h2>
+      A total of 36 factors were included in the calculation of the overall
+      index, which were divided into seven subject areas here. The best achievable
+      value in each division is 100.
+
+      Stability considered the sector of economic and politics of a country.
+      Political stability does not necessary contribute to civil rights if it comes
+      from dictatorial principles. Besides, health services is also an essential element
+      that contribute to quality of life. As for safety, it is also crucial as even the most
+      beautiful country cannot satisfy anyone if their life is in danger.
+      </p>
+    </div>
+  </div>
+
+  <h2>Average Score of Factors by <b>Continents</b></h2>
+
+  <div class="grid-container3">
+    <div class="item2">
+      <div id="africa_radar"></div>
+    </div>
+    <div class="item3">
+      <div id="asia_radar"></div>
+    </div>
+    <div class="item4">
+      <div id="europe_radar"></div>
+    </div>
+  </div>
+
+  <div class="grid-container3">
+    <div class="item2">
+      <div id="na_radar"></div>
+    </div>
+    <div class="item3">
+      <div id="sa_radar"></div>
+    </div>
+    <div class="item4">
+      <div id="ocenia_radar"></div>
+    </div>
+  </div>
+
+  
+
+  <h2>Does Quality of Life comes with a Price?</h2> 
+
+  <div class="grid-container4">
+    <div class="item2">
+      <div id="scatter_plot"></div>
+    </div>
+
+    <div class = "item3">
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/J5fCcsW/Lebanon.jpg" alt="Lebanon" border="0"></a>    
+    </div>
+
+    <div class = "item4">
+      <p>Due to the Lebanese liquidity crisis, an ongoing financial crisis affecting Lebanon,
+         the country has high living index as the country mainly depends on import goods. 
+         The crisis makes the people want to emigrate and among those leaving are doctors. 
+         The WHO has said most hospitals are operating at 50% capacity, around 40% of doctors and 30%
+         of nurses have permanently emigrated and causing the factor health to decrease drastically.
+      </p>
+    </div>
+  </div>
+
+  <h2>Highest & Lowest Living Index Comparison</h2>
+  <div class="grid-container5">
+    <div class="item2">
+        <div id="top_bar_chart"></div>
+    </div>
+    <div class="item4">
+        <div id="bot_bar_chart"></div>
+    </div>
+  </div>
+
+  <div class="end">
+    <h6>FIT3179 Visualisation 2 by Ee Leen</h6>
+  </div>
+
+  <script>
+    var vg_1 = "js/qualityMap.vg.json";
+    vegaEmbed("#choropleth_map", vg_1).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+  <script>
+    var vg_2 = "js/factorsOfquality.vg.json";
+    vegaEmbed("#donut_chart", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/africa.vg.json";
+    vegaEmbed("#africa_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/asia.vg.json";
+    vegaEmbed("#asia_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/europe.vg.json";
+    vegaEmbed("#europe_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/northAmerica.vg.json";
+    vegaEmbed("#na_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/southAmerica.vg.json";
+    vegaEmbed("#sa_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/ocenia.vg.json";
+    vegaEmbed("#ocenia_radar", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/qualityVSindex.vg.json";
+    vegaEmbed("#scatter_plot", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/top10.vg.json";
+    vegaEmbed("#top_bar_chart", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+  <script>
+    var vg_2 = "js/bot10.vg.json";
+    vegaEmbed("#bot_bar_chart", vg_2).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
 </body>
+
 </html>

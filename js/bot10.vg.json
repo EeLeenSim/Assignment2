@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/top10stats.csv"},
-  "title": "Top 10 Country with Highest Living Index", 
+  "data": {"url": "https://raw.githubusercontent.com/EeLeenSim/Assignment2/main/data/bot10.csv"},
+  "title": "Bottom 10 Country with Lowest Living Index", 
   "width": 300, "height": 220,
   "resolve": {"scale": {"color": "independent"}},
   "layer": [
@@ -18,7 +18,7 @@
 "Turkey",
 "Kazakhstan",
 "Egypt"], "type": "nominal"},
-    "color": {"field": "Index","type": "nominal","scale":{"range": ["#374c80",
+"color": {"field": "Index","type": "nominal","scale":{"range": ["#374c80",
 "#ef5675",
 "#ffa600",
 "#699bcc"] }}}

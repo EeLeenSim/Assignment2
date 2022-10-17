@@ -1,32 +1,195 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple pie chart with labels.",
-    "data": {
+  "$schema": "https://vega.github.io/schema/vega/v3.0.json",
+  "width": 250,
+  "height": 250,
+  "autosize": "pad",
+  "signals": [
+    {"name": "startAngle", "value": 0},
+    {"name": "endAngle", "value": 6.29},
+    {"name": "padAngle", "value": 0},
+    {"name": "sort", "value": true},
+    {"name": "strokeWidth", "value": 2},
+    {
+      "name": "selected",
+      "value": "100",
+      "on": [{"events": "mouseover", "update": "datum"}]
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
       "values": [
-        {"Factor": "Stability", "Percentage": 15},
-        {"Factor": "Rights", "Percentage": 20},
-        {"Factor": "Health", "Percentage": 15},
-        {"Factor": "Safety", "Percentage": 10},
-        {"Factor": "Climate", "Percentage": 15},
-        {"Factor": "Costs", "Percentage": 15},
-        {"Factor": "Popularity", "Percentage": 10}
+        {
+          "Factor": "Stability",
+          "Percentage": 15,
+          "startAngle": 1.258,
+          "endAngle": 2.2015000000000002
+        },
+        {
+          "Factor": "Rights",
+          "Percentage": 20,
+          "startAngle": 5.032000000000001,
+          "endAngle": 6.290000000000001
+        },
+        {
+          "Factor": "Health",
+          "Percentage": 15,
+          "startAngle": 2.2015000000000002,
+          "endAngle": 3.1450000000000005
+        },
+        {
+          "Factor": "Safety",
+          "Percentage": 10,
+          "startAngle": 0,
+          "endAngle": 0.629
+        },
+        {
+          "Factor": "Climate",
+          "Percentage": 15,
+          "startAngle": 3.1450000000000005,
+          "endAngle": 4.088500000000001
+        },
+        {
+          "Factor": "Costs",
+          "Percentage": 15,
+          "startAngle": 4.088500000000001,
+          "endAngle": 5.032000000000001
+        },
+        {
+          "Factor": "Popularity",
+          "Percentage": 10,
+          "startAngle": 0.629,
+          "endAngle": 1.258
+        }
+      ],
+      "transform": [
+        {
+          "type": "pie",
+          "field": "Percentage",
+          "startAngle": {"signal": "startAngle"},
+          "endAngle": {"signal": "endAngle"},
+          "sort": {"signal": "sort"}
+        }
       ]
     },
-    "title":"Factors contribute to Quality of Life",
-    "encoding": {
-      "theta": {"field": "Percentage", "type": "quantitative", "stack": true},
-      "color": {"field": "Factor", "type": "nominal", "legend": null },"tooltip": [
-        {"field": "Factor", "type": "nominal"},
-        {"field": "Percentage", "type": "quantitative"}
-      ]}
-    ,
-    "layer": [{
-      "mark": {"type": "arc", "outerRadius": 70}
-    }, {
-      "mark": {"type": "text", "radius": 89},
-      "encoding": {
-        "text": {"field": "Factor", "type": "nominal"}
+    {
+      "name": "fieldSum",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "fields": ["Percentage"],
+          "ops": ["sum"],
+          "as": ["sum"]
+        }
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Factors:",
+      "orient": "none",
+      "padding": {"value": 20},
+      "encode": {
+        "symbols": {"enter": {"fillOpacity": {"value": 1}}},
+        "legend": {
+          "update": {
+            "x": {
+              "signal": "(width / 2) + if(selected && selected.Factor == datum.Factor, if(width >= height, height, width) / 2 * 1.1 * 0.8, if(width >= height, height, width) / 2 * 0.8)",
+              "offset": 20
+            },
+            "y": {"signal": "(height / 2)", "offset": -50}
+          }
+        }
       }
-    }]
+    }
+  ],
+  "scales": [
+    {"name": "color", "type": "ordinal", "range":  ["#7a5195",
+"#edda09",
+"#ffa600",
+"#40aac7", "#ef5675", "#003f5c", "#8bd3c7"]}
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "Factor"},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"}
+        },
+        "update": {
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "padAngle": {
+            "signal": "if(selected && selected.Factor == datum.Factor, 0.015, 0.015)"
+          },
+          "innerRadius": {
+            "signal": "if(selected && selected.Factor == datum.Factor, if(width >= height, height, width) / 2 * 0.45, if(width >= height, height, width) / 2 * 0.5)"
+          },
+          "outerRadius": {
+            "signal": "if(selected && selected.Factor == datum.Factor, if(width >= height, height, width) / 2 * 1.05 * 0.8, if(width >= height, height, width) / 2 * 0.8)"
+          },
+          "opacity": {
+            "signal": "if(selected && selected.Factor !== datum.Factor, 1, 1)"
+          },
+          "stroke": {"signal": "scale('color', datum.Factor)"},
+          "strokeWidth": {"signal": "strokeWidth"},
+          "fillOpacity": {
+            "signal": "if(selected && selected.Factor == datum.Factor, 0.8, 0.8)"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {"text": {"value": ""}},
+        "update": {
+          "opacity": {"value": 1},
+          "x": {"signal": "width / 2"},
+          "y": {"signal": "height / 2"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fontSize": {"signal": "if(width >= height, height, width) * 0.065"},
+          "text": {"value": "Quality of Life "}
+        }
+      }
+    },
+    {
+      "name": "mark_percentage",
+      "type": "text",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "text": {
+            "signal": "if(datum['endAngle'] - datum['startAngle'] < 0.3, '', format(datum['Percentage'] , '.0f')) + '%'"
+          },
+          "x": {"signal": "if(width >= height, height, width) / 2"},
+          "y": {"signal": "if(width >= height, height, width) / 2"},
+          "radius": {
+            "signal": "if(selected && selected.Factor == datum.Factor, if(width >= height, height, width) / 2 * 1.05 * 0.65, if(width >= height, height, width) / 2 * 0.65)"
+          },
+          "theta": {"signal": "(datum['startAngle'] + datum['endAngle'])/2"},
+          "fill": {"value": "#FFFFFF"},
+          "fontSize": {"value": 13},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"}
+        }
+      }
+    }
+
+  ],
+  "config": {
+    "text": {
+      "font": "Lucida Sans Unicode",
+      "fontSize":20
+    },
+    "legend": {
+      "fontSize": {"value":20}
+    }
   }
-  
+}
