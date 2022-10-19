@@ -1,0 +1,121 @@
+html{
+  padding-left: 4cm;
+  padding-right: 4cm;
+  padding-bottom: 4cm;
+  padding-top: 0.8cm;
+  background-color: #f6ece2;
+}
+#c-align {
+  text-align: center;
+}
+
+#page-loader {
+  position:fixed;
+  width:100%;
+  left:0;right:0;top:0;bottom:0;
+  z-index:9999;
+  display:block;
+}
+
+/* Header */
+.header {
+      size-adjust: 150;
+      font-family: "Fira Sans", sans-serif;
+      font-weight: 2000px;
+      font-size: 25px;
+}
+
+/* #body {
+  font-family: Helvetica, sans-serif;
+  font: size 10% ;
+} */
+
+
+/* Paragraph's font size setting */
+p {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+}
+
+.end {
+  margin-top: 50px;
+  text-align:right;
+  font-family: 'Helvetica', sans-serif;
+  color: black;
+  font-size: x-large;
+}
+
+
+.item1 { grid-area: header;}
+.item2 { grid-area: left; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right;}
+.item5 { grid-area: footer; }
+.item6 { grid-area: footer_left; }
+.item7 { grid-area: footer_right; }
+
+.chart1_box{
+  text-align: center;
+  padding: 30px;
+}
+
+.chart1{
+  /* margin-left: 100px; */
+  background: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'left left left left main main main main'
+    'left left left left right right right right'
+    'footer footer footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header header'
+    'left left left left right right right right'
+    'footer footer footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container3 {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header header header'
+    'left left left main main right right right'
+    'footer footer footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 5px;
+}
+
+.grid-container4 {
+  display: grid;
+  grid-template-areas:
+    'left left left main main main main main'
+    'left left left main main main main main'
+    'left left left right right right right right';
+  gap: 10px;
+  padding: 30px;
+}
+
+.grid-container5 {
+  display: grid;
+  grid-template-areas:
+    'left left left left right right right right'
+    'left left left left right right right right'
+    'left left left left right right right right';
+  gap: 10px;
+  padding: 10px;
+}
